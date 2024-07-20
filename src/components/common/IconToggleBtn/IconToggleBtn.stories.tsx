@@ -8,6 +8,31 @@ import IconToggleBtn from './IconToggleBtn';
 const meta = {
 	title: 'components/common/IconToggleBtn',
 	component: IconToggleBtn,
+	argTypes: {
+		activeIcon: {
+			description: '상태가 활성화되어 있을 경우 사용할 아이콘을 의미합니다.',
+			control: { type: 'none' },
+		},
+		inactiveIcon: {
+			description: '상태가 비활성화되어 있을 경우 사용할 아이콘을 의미합니다.',
+			control: { type: 'none' },
+		},
+		isActive: {
+			description:
+				'상태가 활성화되어 있는지의 여부입니다. **흔히 사용하는, 버튼을 조작할 수 없는 상황인 disabled 속성과는 무관합니다.**',
+		},
+		ariaLabel: {
+			description:
+				'버튼을 설명하는 텍스트이자 스크린 리더에서 사용자에게 들려줄 정보 텍스트를 의미합니다.',
+		},
+		disabled: {
+			description:
+				'버튼이 비활성화되어 조작할 수 없는지의 여부입니다. **토글 상태와는 무관합니다.**',
+		},
+		onClick: {
+			description: '버튼 클릭시 실행할 리스너 함수를 의미합니다.',
+		},
+	},
 } satisfies Meta<typeof IconToggleBtn>;
 
 export default meta;
