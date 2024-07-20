@@ -85,3 +85,15 @@ export const InactiveDisabled: Story = {
 		ariaLabel: '마이크 켜기',
 	},
 };
+
+export const PngIcon: Story = {
+	args: {
+		activeIcon:
+			'https://github-production-user-asset-6210df.s3.amazonaws.com/87642422/350677050-549159b8-8a6d-4eff-86f8-9475b14f6a83.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240720%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240720T082810Z&X-Amz-Expires=300&X-Amz-Signature=56ca710ea3f058c3a3b0603cd4eb7aac2ac1ef177dba397ef0dc6e0254203acc&X-Amz-SignedHeaders=host&actor_id=87642422&key_id=0&repo_id=825320470',
+		inactiveIcon:
+			'https://github-production-user-asset-6210df.s3.amazonaws.com/87642422/350677050-549159b8-8a6d-4eff-86f8-9475b14f6a83.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240720%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240720T082810Z&X-Amz-Expires=300&X-Amz-Signature=56ca710ea3f058c3a3b0603cd4eb7aac2ac1ef177dba397ef0dc6e0254203acc&X-Amz-SignedHeaders=host&actor_id=87642422&key_id=0&repo_id=825320470',
+		isActive: true,
+		disabled: false,
+		ariaLabel: '마이크 켜기',
+	},
+};
