@@ -1,6 +1,6 @@
 export const theme = {
 	colors: {
-		WHITE: '#ffffff',
-		GRAY: '#545454',
+		WHITE: '#FFFFFF',
+		LIGHT_GRAY: '#BBBBBB',
 	},
 };
