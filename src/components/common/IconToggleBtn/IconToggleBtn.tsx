@@ -7,6 +7,7 @@ interface IconToggleBtnProps {
 	inactiveIcon: string | React.ReactElement<SVGProps<SVGSVGElement>>;
 	isActive: boolean;
 	disabled?: boolean;
+	ariaLabel?: string;
 	onClick: (toggleState: boolean) => void;
 }
 
@@ -15,6 +16,7 @@ const IconToggleBtn = ({
 	inactiveIcon,
 	isActive,
 	disabled,
+	ariaLabel,
 	onClick,
 }: IconToggleBtnProps) => {
 	return (
@@ -22,18 +24,21 @@ const IconToggleBtn = ({
 			type="button"
 			$isActive={isActive}
 			disabled={disabled}
+			aria-label={ariaLabel}
+			aria-pressed={isActive}
+			aria-disabled={disabled}
 			onClick={() => {
 				onClick(!isActive);
 			}}
 		>
 			{isActive ? (
 				typeof activeIcon === 'string' ? (
-					<S.ImageIcon src={activeIcon} $isActive={isActive} />
+					<S.ImageIcon src={activeIcon} $isActive={isActive} alt={ariaLabel} />
 				) : (
 					<S.SvgIconWrapper $isActive={isActive}>{activeIcon}</S.SvgIconWrapper>
 				)
 			) : typeof inactiveIcon === 'string' ? (
-				<S.ImageIcon src={inactiveIcon} $isActive={isActive} />
+				<S.ImageIcon src={inactiveIcon} $isActive={isActive} alt={ariaLabel} />
 			) : (
 				<S.SvgIconWrapper $isActive={isActive}>{inactiveIcon}</S.SvgIconWrapper>
 			)}
