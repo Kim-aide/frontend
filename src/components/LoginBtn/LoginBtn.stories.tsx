@@ -8,7 +8,7 @@ import LoginBtn from './LoginBtn';
  */
 
 const meta: Meta<typeof LoginBtn> = {
-	title: 'Components/LoginBtn',
+	title: 'components/LoginBtn',
 	component: LoginBtn,
 	tags: ['autodocs'],
 };
