@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.button<{ $size: 'medium' | 'small' }>`
+const Container = styled.button<{ $size: 'medium' | 'small' }>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,13 +17,13 @@ export const Container = styled.button<{ $size: 'medium' | 'small' }>`
 	}
 `;
 
-export const ImageIcon = styled.img`
+const ImageIcon = styled.img`
 	width: 40px;
 	height: 40px;
 	object-fit: contain;
 `;
 
-export const SvgIconWrapper = styled.div`
+const SvgIconWrapper = styled.div`
 	width: 100%;
 	height: 100%;
 
@@ -34,3 +34,5 @@ export const SvgIconWrapper = styled.div`
 		transition: color 0.2s;
 	}
 `;
+
+export { Container, ImageIcon, SvgIconWrapper };
