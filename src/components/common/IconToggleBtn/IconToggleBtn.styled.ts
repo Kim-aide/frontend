@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.button<{ $isActive: boolean }>`
+const Container = styled.button<{ $isActive: boolean }>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,13 +27,13 @@ export const Container = styled.button<{ $isActive: boolean }>`
 	}
 `;
 
-export const ImageIcon = styled.img<{ $isActive: boolean }>`
+const ImageIcon = styled.img<{ $isActive: boolean }>`
 	width: 32px;
 	height: 32px;
 	object-fit: contain;
 `;
 
-export const SvgIconWrapper = styled.div<{ $isActive: boolean }>`
+const SvgIconWrapper = styled.div<{ $isActive: boolean }>`
 	& > svg {
 		width: 32px;
 		height: 32px;
@@ -41,3 +41,5 @@ export const SvgIconWrapper = styled.div<{ $isActive: boolean }>`
 			$isActive ? theme.colors.WHITE : theme.colors.LIGHT_GRAY};
 	}
 `;
+
+export { Container, ImageIcon, SvgIconWrapper };
