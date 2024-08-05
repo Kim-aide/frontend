@@ -23,6 +23,12 @@ const meta: Meta<typeof UserVideo> = {
 		height: {
 			description: '화면의 세로 길이를 의미합니다.',
 		},
+		avatar: {
+			description: '참여자의 아바타(= 프로필 사진)입니다.',
+		},
+		nickname: {
+			description: '참여자의 닉네임을 의미합니다.',
+		},
 	},
 	decorators: [
 		(Story) => {
