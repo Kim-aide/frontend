@@ -68,9 +68,14 @@ interface FakeUserVideoProps {
 	};
 	width: string;
 	height: string;
+	avatar: string;
+	nickname: string;
 }
 
 type Story = StoryObj<FakeUserVideoProps>;
+
+const AVATAR_URL =
+	'https://github.com/user-attachments/assets/20a8431a-f2c0-44b5-8f12-848630b44b91';
 
 /**
  * 사용자가 일반적인 상황에서 여러 메뉴들을 조작할 경우 보이게 될 UI의 예시입니다.
@@ -116,6 +121,8 @@ export const Preview: Story = {
 		},
 		width: '600px',
 		height: '340px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -131,6 +138,8 @@ export const VideoOn: Story = {
 		},
 		width: '600px',
 		height: '340px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -146,6 +155,8 @@ export const VideoOff: Story = {
 		},
 		width: '600px',
 		height: '340px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -165,6 +176,8 @@ export const VideoOnAndSpeaking: Story = {
 		},
 		width: '600px',
 		height: '340px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -184,6 +197,8 @@ export const VideoOffAndSpeaking: Story = {
 		},
 		width: '600px',
 		height: '340px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -199,6 +214,8 @@ export const HorizontallyLongScreen: Story = {
 		},
 		width: '600px',
 		height: '200px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -214,6 +231,8 @@ export const VerticallyLongScreen: Story = {
 		},
 		width: '340px',
 		height: '600px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -232,6 +251,8 @@ export const HorizontallyLongVideoOff: Story = {
 		},
 		width: '600px',
 		height: '200px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
 	},
 };
 
@@ -247,5 +268,9 @@ export const VerticallyLongScreenVideoOff: Story = {
 		},
 		width: '340px',
 		height: '600px',
+		avatar: AVATAR_URL,
+		nickname: '오로라',
+	},
+};
 	},
 };
