@@ -23,7 +23,7 @@ const UserVideo = ({ streamManager, width, height }: UserVideoProps) => {
 			$isUserSpeaking={isUserSpeaking}
 		>
 			<S.NoVideoScreen>
-				<img src={kimAideLogoLarge} alt="" />
+				<S.Logo src={kimAideLogoLarge} alt="" draggable={false} />
 			</S.NoVideoScreen>
 			<S.Video
 				autoPlay={true}

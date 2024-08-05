@@ -39,6 +39,10 @@ const NoVideoScreen = styled.div`
 	}
 `;
 
+const Logo = styled.img`
+	user-select: none;
+`;
+
 const Video = styled.video<{ $videoActive: boolean }>`
 	display: ${({ $videoActive }) => ($videoActive ? 'block' : 'none')};
 	position: absolute;
@@ -48,4 +52,4 @@ const Video = styled.video<{ $videoActive: boolean }>`
 	height: 100%;
 `;
 
-export { Container, NoVideoScreen, Video };
+export { Container, NoVideoScreen, Logo, Video };
