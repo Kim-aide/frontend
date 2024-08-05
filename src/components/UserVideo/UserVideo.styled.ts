@@ -22,6 +22,7 @@ const Container = styled.div<{
 			: css`
 					outline: 0 solid ${theme.colors.BLACK};
 				`};
+	transition: outline 0.15s;
 `;
 
 const NoVideoScreen = styled.div`
