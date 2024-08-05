@@ -272,5 +272,24 @@ export const VerticallyLongScreenVideoOff: Story = {
 		nickname: '오로라',
 	},
 };
+
+/**
+ * 닉네임이 매우 길어 화면을 가득 채우는 경우, `...`로 생략됩니다. 다른 말로, 닉네임에는 `ellipsis`가 적용되어 있습니다.
+ */
+export const VeryLongNickname: Story = {
+	args: {
+		streamManager: {
+			addVideoElement: () => {},
+			stream: {
+				videoActive: false,
+			},
+			on: () => {},
+			off: () => {},
+		},
+		width: '600px',
+		height: '340px',
+		avatar: AVATAR_URL,
+		nickname:
+			'이닉네임은너무길기때문에도저히한화면에담을수없을정도입니다이경우에는과연어떻게작동할까요',
 	},
 };
