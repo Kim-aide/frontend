@@ -87,13 +87,13 @@ export const Preview: Story = {
 				if (eventName === 'publisherStartSpeaking') {
 					setInterval(() => {
 						callback();
-					}, 3000);
+					}, 1500);
 				}
 
 				if (eventName === 'publisherStopSpeaking') {
 					setInterval(() => {
 						callback();
-					}, 5000);
+					}, 4000);
 				}
 
 				if (eventName === 'streamPropertyChanged') {
