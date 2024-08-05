@@ -63,7 +63,7 @@ interface FakeUserVideoProps {
 		stream: {
 			videoActive: boolean;
 		};
-		on: (eventName: string, callback: () => void) => void;
+		on: (eventName: string, callback: (event?: unknown) => void) => void;
 		off: () => void;
 	};
 	width: string;
@@ -71,6 +71,53 @@ interface FakeUserVideoProps {
 }
 
 type Story = StoryObj<FakeUserVideoProps>;
+
+/**
+ * 사용자가 일반적인 상황에서 여러 메뉴들을 조작할 경우 보이게 될 UI의 예시입니다.
+ * 이 스토리에서는 의도적으로 `publisherStartSpeaking` / `publisherStopSpeaking` / `streamPropertyChanged` 이벤트를 랜덤하게 호출하고 있습니다.
+ */
+export const Preview: Story = {
+	args: {
+		streamManager: {
+			addVideoElement: () => {},
+			stream: {
+				videoActive: false,
+			},
+			on: (eventName, callback) => {
+				if (eventName === 'publisherStartSpeaking') {
+					setInterval(() => {
+						callback();
+					}, 3000);
+				}
+
+				if (eventName === 'publisherStopSpeaking') {
+					setInterval(() => {
+						callback();
+					}, 5000);
+				}
+
+				if (eventName === 'streamPropertyChanged') {
+					setInterval(() => {
+						callback({
+							stream: { videoActive: true },
+							changedProperty: 'videoActive',
+						});
+					}, 2500);
+
+					setInterval(() => {
+						callback({
+							stream: { videoActive: false },
+							changedProperty: 'videoActive',
+						});
+					}, 8000);
+				}
+			},
+			off: () => {},
+		},
+		width: '600px',
+		height: '340px',
+	},
+};
 
 export const VideoOn: Story = {
 	args: {
