@@ -8,9 +8,17 @@ interface UserVideoProps {
 	streamManager: StreamManager;
 	width: string;
 	height: string;
+	avatar: string;
+	nickname: string;
 }
 
-const UserVideo = ({ streamManager, width, height }: UserVideoProps) => {
+const UserVideo = ({
+	streamManager,
+	width,
+	height,
+	avatar,
+	nickname,
+}: UserVideoProps) => {
 	const { videoRef, videoActive, isUserSpeaking } = useStreamManagerProperties({
 		streamManager,
 	});
@@ -30,6 +38,10 @@ const UserVideo = ({ streamManager, width, height }: UserVideoProps) => {
 				ref={videoRef}
 				$videoActive={videoActive}
 			></S.Video>
+			<S.ProfilePanel>
+				<S.Avatar src={avatar} alt={`${nickname}님의 프로필 사진`} />
+				<S.Nickname>{nickname}</S.Nickname>
+			</S.ProfilePanel>
 		</S.Container>
 	);
 };

@@ -52,4 +52,41 @@ const Video = styled.video<{ $videoActive: boolean }>`
 	height: 100%;
 `;
 
-export { Container, NoVideoScreen, Logo, Video };
+const ProfilePanel = styled.div`
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 68px;
+	padding: 14px;
+	background-color: ${({ theme }) => theme.colors.BLACK_TRANSPARENT};
+`;
+
+const Avatar = styled.img`
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	object-fit: cover;
+`;
+
+const Nickname = styled.div`
+	overflow: hidden;
+	font-weight: 700;
+	font-size: 18px;
+	color: ${({ theme }) => theme.colors.WHITE};
+	white-space: nowrap;
+	text-overflow: ellipsis;
+`;
+
+export {
+	Container,
+	NoVideoScreen,
+	Logo,
+	Video,
+	ProfilePanel,
+	Avatar,
+	Nickname,
+};
