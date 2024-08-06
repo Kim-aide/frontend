@@ -13,6 +13,12 @@ export default [
 	pluginJs.configs.recommended,
 	...tseslint.configs.recommended,
 	...fixupConfigRules(pluginReactConfig),
-	eslintConfigPrettier, // <--
-	eslintPluginPrettierRecommended, // <--
+	eslintConfigPrettier,
+	eslintPluginPrettierRecommended,
+	{
+		rules: {
+			'react/jsx-uses-react': 'off',
+			'react/react-in-jsx-scope': 'off',
+		},
+	},
 ];
