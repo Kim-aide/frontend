@@ -47,8 +47,10 @@ const useChatSidebar = ({ onSendMessage }: UseChatSideBarParams) => {
 			return;
 		}
 
-		textAreaRef.current.style.height = '1px';
-		textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`;
+		textAreaRef.current.style.height = '0';
+		textAreaRef.current.style.overflow = 'hidden';
+		textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight + 3}px`;
+		textAreaRef.current.style.overflow = 'auto';
 	};
 
 	const handleEnterKeyDown: KeyboardEventHandler<HTMLTextAreaElement> = (
