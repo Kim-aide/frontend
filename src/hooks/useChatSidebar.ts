@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import type { ChangeEventHandler, KeyboardEventHandler } from 'react';
 
 interface UseChatSideBarParams {
@@ -24,7 +24,19 @@ interface UseChatSideBarParams {
  */
 const useChatSidebar = ({ onSendMessage }: UseChatSideBarParams) => {
 	const [currentMessage, setCurrentMessage] = useState('');
-	const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
+	const chatMessagesContainerRef = useRef<HTMLUListElement>(null);
+	const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+	useEffect(() => {
+		const chatMessagesContainerElement = chatMessagesContainerRef.current;
+
+		if (!chatMessagesContainerElement) {
+			return;
+		}
+
+		chatMessagesContainerElement.scrollTop =
+			chatMessagesContainerRef.current.scrollHeight;
+	}, []);
 
 	const handleCurrentMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (
 		event,
@@ -65,6 +77,7 @@ const useChatSidebar = ({ onSendMessage }: UseChatSideBarParams) => {
 
 	return {
 		currentMessage,
+		chatMessagesContainerRef,
 		textAreaRef,
 		handleCurrentMessageChange,
 		handleEnterKeyDown,

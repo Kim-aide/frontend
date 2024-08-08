@@ -23,6 +23,7 @@ const ChatSidebar = ({
 }: ChatSidebarProps) => {
 	const {
 		currentMessage,
+		chatMessagesContainerRef,
 		textAreaRef,
 		handleCurrentMessageChange,
 		handleEnterKeyDown,
@@ -30,7 +31,7 @@ const ChatSidebar = ({
 	} = useChatSidebar({ onSendMessage });
 	return (
 		<S.Container $top={top} $height={height} $isOpen={open}>
-			<S.ChatMessagesContainer>
+			<S.ChatMessagesContainer ref={chatMessagesContainerRef}>
 				{messageInfos.map((messageInfo) => (
 					<ChatMessage key={messageInfo.id} {...messageInfo} />
 				))}
