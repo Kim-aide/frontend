@@ -36,7 +36,6 @@ const meta: Meta<typeof UserVideo> = {
 				const videoElements = Array.from(
 					document.getElementsByTagName('video'),
 				);
-				console.log(videoElements);
 
 				videoElements.map((videoElement) => {
 					videoElement.src =
