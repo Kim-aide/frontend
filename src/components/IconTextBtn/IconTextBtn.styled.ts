@@ -6,12 +6,12 @@ const IconTextBtn = styled.button`
 	align-items: center;
 	width: 220px;
 	height: 45px;
-	border: ${({ theme }) => theme.colors.WHITE} solid 2px;
+	border: #545454 solid 1px;
 	border-radius: 5px;
-	background-color: #545454;
+	background-color: #2b2b2b;
+	transition: background-color 0.15s;
 	&:hover {
-		background-color: #6f6f6f;
-		transition: background-color 0.3s;
+		background-color: #545454;
 	}
 `;
 
