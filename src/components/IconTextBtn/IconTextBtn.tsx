@@ -11,7 +11,7 @@ const IconTextBtn = (props: IconTextBtnProps) => {
 	return (
 		<S.IconTextBtn>
 			{typeof props.icon === 'string' ? (
-				<S.IconImg src={props.icon} />
+				<S.IconImg src={props.icon} alt="" />
 			) : (
 				<S.SvgIcon>{props.icon}</S.SvgIcon>
 			)}
