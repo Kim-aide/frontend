@@ -4,11 +4,12 @@ import * as S from './IconTextBtn.styled';
 interface IconTextBtnProps {
 	icon: string | React.ReactElement<SVGProps<SVGSVGElement>>;
 	text: string;
+	onClick: () => void;
 }
 
 const IconTextBtn = (props: IconTextBtnProps) => {
 	return (
-		<S.IconTextBtn>
+		<S.IconTextBtn onClick={props.onClick}>
 			{typeof props.icon === 'string' ? (
 				<S.IconImg src={props.icon} alt="" />
 			) : (
