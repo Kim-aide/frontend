@@ -4,3 +4,7 @@ export { ReactComponent as EmojiIcon } from './emoji-icon.svg';
 export { ReactComponent as PaperPlaneIcon } from './paper-plane-icon.svg';
 export { ReactComponent as MicrophoneIcon } from './microphone-icon.svg';
 export { ReactComponent as MicrophoneOffIcon } from './microphone-off-icon.svg';
+export { ReactComponent as AddMeetingIcon } from './add-meeting-icon.svg';
+export { ReactComponent as NavigateMainIcon } from './navigate-main-icon.svg';
+export { ReactComponent as SearchIcon } from './search-icon.svg';
+export { ReactComponent as SummaryIcon } from './summary-icon.svg';
