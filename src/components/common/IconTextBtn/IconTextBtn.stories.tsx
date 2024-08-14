@@ -1,20 +1,18 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import IconTextBtn from './IconTextBtn';
 import {
 	AddMeetingIcon,
-	GoBackIcon,
+	NavigateMainIcon,
 	SearchIcon,
 	SummaryIcon,
-} from '../../assets/TextIcon';
+} from '../../../assets/svg';
 
 /**
  * `IconTextBtn` 컴포넌트는 아이콘과 텍스트가 함께 있는 버튼을 만들어주는 컴포넌트입니다.
- *
  */
 
 const meta = {
-	title: 'components/IconTextBtn',
+	title: 'components/common/IconTextBtn',
 	component: IconTextBtn,
 	argTypes: {
 		icon: {
@@ -23,7 +21,6 @@ const meta = {
 		},
 		text: {
 			description: '버튼에 표시할 텍스트를 받습니다.',
-			control: { type: 'string' },
 		},
 	},
 } satisfies Meta<typeof IconTextBtn>;
@@ -39,9 +36,9 @@ export const AddMeetingRoom: Story = {
 	},
 };
 
-export const Navigate: Story = {
+export const NavigateMain: Story = {
 	args: {
-		icon: <GoBackIcon />,
+		icon: <NavigateMainIcon />,
 		text: '메인 페이지로 돌아가기',
 	},
 };
