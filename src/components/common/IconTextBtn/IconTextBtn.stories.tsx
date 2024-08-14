@@ -22,6 +22,9 @@ const meta = {
 		text: {
 			description: '버튼에 표시할 텍스트를 받습니다.',
 		},
+		onClick: {
+			description: '버튼 클릭 시 실행할 함수를 받습니다.',
+		},
 	},
 } satisfies Meta<typeof IconTextBtn>;
 
