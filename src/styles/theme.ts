@@ -10,5 +10,7 @@ export const theme = {
 		WHITE_TRANSPARENT: '#ffffff90',
 		DARK_GRAY: '#212121',
 		TOMATO: '#ff4040',
+		COMMON_BTN_BGC: '#2b2b2b',
+		COMMON_BTN_HOVER: '#383838',
 	},
 };
