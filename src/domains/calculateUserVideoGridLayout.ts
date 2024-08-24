@@ -45,8 +45,7 @@ const calculateUserVideoGridLayout = (
 		() => layoutColumnCount,
 	);
 	const emptySpacesCount =
-		(layoutRowCount * layoutColumnCount - participantsCount) %
-		layoutColumnCount;
+		layoutRowCount * layoutColumnCount - participantsCount;
 	const rowSize = rowVideoCounts.length;
 
 	for (let rowIndex = 0; rowIndex < emptySpacesCount; rowIndex += 1) {
