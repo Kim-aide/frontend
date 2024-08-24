@@ -1,6 +1,6 @@
 import { StreamManager } from 'openvidu-browser';
 import * as S from './UserVideoGrid.styled';
-import UserVideo from '../UserVideo/UserVideo';
+import UserVideo from './UserVideo/UserVideo';
 import useUserVideoGrid from '../../hooks/useUserVideoGrid';
 
 interface UserVideoInfo {

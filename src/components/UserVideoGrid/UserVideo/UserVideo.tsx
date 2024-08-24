@@ -1,8 +1,8 @@
 import React from 'react';
 import * as S from './UserVideo.styled';
 import type { StreamManager } from 'openvidu-browser';
-import useStreamManagerProperties from '../../hooks/useStreamManagerProperties';
-import { kimAideLogoLarge } from '../../assets/png';
+import useStreamManagerProperties from '../../../hooks/useStreamManagerProperties';
+import { kimAideLogoLarge } from '../../../assets/png';
 
 interface UserVideoProps {
 	streamManager: StreamManager;
