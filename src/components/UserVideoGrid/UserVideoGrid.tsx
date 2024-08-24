@@ -21,8 +21,6 @@ const UserVideoGrid = ({ userVideoInfos }: UserVideoGridProps) => {
 		});
 	let renderingVideoIndex = 0;
 
-	console.log({ videoWidth, videoHeight, rowVideoCounts, videoGridRef });
-
 	return (
 		<S.Container ref={videoGridRef}>
 			{rowVideoCounts.map((rowVideoCount, rowIndex) => (
