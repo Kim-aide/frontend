@@ -13,26 +13,28 @@ const calculateUserVideoGridLayout = (
 	let videoWidth = 0;
 	let videoHeight = 0;
 
-	for (let c = 1; c <= MAX_COLUMN_COUNT; c += 1) {
-		const r = Math.ceil(participantsCount / c);
+	for (let columnCount = 1; columnCount <= MAX_COLUMN_COUNT; columnCount += 1) {
+		const rowCount = Math.ceil(participantsCount / columnCount);
 		const videoGridWidthWithoutGap =
-			videoGridWidth - (c - 1) * videoGridLayoutGap;
+			videoGridWidth - (columnCount - 1) * videoGridLayoutGap;
 		const videoGridHeightWithoutGap =
-			videoGridHeight - (r - 1) * videoGridLayoutGap;
+			videoGridHeight - (rowCount - 1) * videoGridLayoutGap;
 
 		if (videoGridWidthWithoutGap <= 0 || videoGridHeightWithoutGap <= 0) {
 			continue;
 		}
 
 		const currentRatio =
-			videoGridWidthWithoutGap / c / (videoGridHeightWithoutGap / r);
+			videoGridWidthWithoutGap /
+			columnCount /
+			(videoGridHeightWithoutGap / rowCount);
 
 		if (getRatioDifference(currentRatio) < getRatioDifference(bestRatio)) {
 			bestRatio = currentRatio;
-			layoutRowCount = r;
-			layoutColumnCount = c;
-			videoWidth = videoGridWidthWithoutGap / c;
-			videoHeight = videoGridHeightWithoutGap / r;
+			layoutRowCount = rowCount;
+			layoutColumnCount = columnCount;
+			videoWidth = videoGridWidthWithoutGap / columnCount;
+			videoHeight = videoGridHeightWithoutGap / rowCount;
 		}
 	}
 
@@ -47,8 +49,8 @@ const calculateUserVideoGridLayout = (
 		layoutColumnCount;
 	const rowSize = rowVideoCounts.length;
 
-	for (let i = 0; i < emptySpacesCount; i += 1) {
-		rowVideoCounts[layoutRowCount - (i % layoutRowCount) - 1] -= 1;
+	for (let rowIndex = 0; rowIndex < emptySpacesCount; rowIndex += 1) {
+		rowVideoCounts[layoutRowCount - (rowIndex % layoutRowCount) - 1] -= 1;
 	}
 
 	return {
