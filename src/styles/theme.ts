@@ -12,5 +12,18 @@ export const theme = {
 		TOMATO: '#ff4040',
 		COMMON_BTN_BGC: '#2b2b2b',
 		COMMON_BTN_HOVER: '#383838',
+		// GRAY: #1A1A1A
+		// GRAY900: #303030
+		// GRAY800: #474747
+		// GRAY700: #5E5E5E
+		// GRAY600: #757575
+		// GRAY500: #8C8C8C
+		// GRAY400: #A3A3A3
+		// GRAY300: #BABABA
+		// GRAY200: #D1D1D1
+		// GRAY100: #F2F2F2
+
+		// GREEN: #00B050
+		// NAVER_GREEN: #02C75A
 	},
 };
