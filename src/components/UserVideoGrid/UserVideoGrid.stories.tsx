@@ -2,11 +2,23 @@ import type { Meta, StoryObj } from '@storybook/react';
 import UserVideoGrid from './UserVideoGrid';
 
 /**
- * `UserVideoGrid`
+ * `UserVideoGrid`는 회의에서의 **모든** 참가자에 대응되는 화면 및 참가자의 정보를 보여줍니다.
+ *
+ * 참가자 수, 화면의 크기에 따라 레이아웃의 형태가 적절하다고 판단되는 UI로 적절하게 변형됩니다.
+ *
+ * **본 컴포넌트를 실제로 구동시키려면 session 연결 시 제공되는 OpenVidu의 streamManager 객체를 사용하여야 합니다.
+ * 여기에서는 시각적인 UI만을 테스트하며, 실제 streamManager 객체가 아닌 가짜 객체를 사용하고 있음에 유의해 주시기 바랍니다.**
  */
 const meta: Meta<typeof UserVideoGrid> = {
 	title: 'components/UserVideoGrid',
 	component: UserVideoGrid,
+	argTypes: {
+		userVideoInfos: {
+			description:
+				'배열 형태의 모든 참가자의 정보들을 의미합니다. 각 참가자의 정보는 `streamManager` 객체, 아바타, 사용자 닉네임으로 구성되어 있습니다.',
+			control: 'none',
+		},
+	},
 	parameters: {
 		backgrounds: {
 			default: 'darkGray',
