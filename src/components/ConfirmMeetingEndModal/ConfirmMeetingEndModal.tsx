@@ -1,5 +1,5 @@
 import * as S from './ConfirmMeetingEndModal.styled';
-import { useState } from 'react';
+import { useState, useId } from 'react';
 import { createPortal } from 'react-dom';
 import { CloseIcon } from '../../assets/svg';
 
@@ -17,6 +17,8 @@ const ConfirmMeetingEndModal = ({
 	onConfirm,
 }: ConfirmMeetingEndModalProps) => {
 	const [isModalClosing, setIsModalClosing] = useState(false);
+	const titleId = useId();
+	const descriptionId = useId();
 
 	const closeModal = () => {
 		setIsModalClosing(true);
@@ -38,7 +40,12 @@ const ConfirmMeetingEndModal = ({
 
 	return open
 		? createPortal(
-				<S.Container role="dialog">
+				<S.Container
+					role="alertdialog"
+					aria-modal="true"
+					aria-labelledby={titleId}
+					aria-describedby={descriptionId}
+				>
 					<S.Backdrop
 						className={isModalClosing ? 'hidden' : 'visible'}
 						onClick={closeModal}
@@ -48,12 +55,12 @@ const ConfirmMeetingEndModal = ({
 						onAnimationEnd={handleModalClosingAnimationEnd}
 					>
 						<S.ModalHeader>
-							<S.Title>회의 종료 확인</S.Title>
-							<S.CloseBtn onClick={closeModal}>
+							<S.Title id={titleId}>회의 종료 확인</S.Title>
+							<S.CloseBtn aria-label="창 닫기" onClick={closeModal}>
 								<CloseIcon />
 							</S.CloseBtn>
 						</S.ModalHeader>
-						<S.ContentContainer>
+						<S.ContentContainer id={descriptionId}>
 							<S.Text>
 								정말로 모든 참가자들을 내보내고,{' '}
 								<S.RoomNameText>{roomName}</S.RoomNameText>을(를) 종료할까요?
@@ -69,6 +76,7 @@ const ConfirmMeetingEndModal = ({
 								$backgroundColor="#515151"
 								$hoverBackgroundColor="#656565"
 								onClick={closeModal}
+								autoFocus={true}
 							>
 								취소
 							</S.ControlPanelBtn>
