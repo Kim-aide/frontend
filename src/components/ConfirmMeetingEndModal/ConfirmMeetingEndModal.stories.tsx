@@ -13,7 +13,7 @@ const meta: Meta<typeof ConfirmMeetingEndModal> = {
 			description: '현재 참여하고 있는 회의방의 이름입니다.',
 		},
 		open: {
-			description: '해당 모달을 열려 있는지의 여부입니다.',
+			description: '해당 모달이 열려 있는지의 여부입니다.',
 			control: 'none',
 		},
 		onClose: {
