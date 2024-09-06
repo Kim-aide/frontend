@@ -14,6 +14,7 @@ const meta: Meta<typeof ConfirmMeetingEndModal> = {
 		},
 		open: {
 			description: '해당 모달을 열려 있는지의 여부입니다.',
+			control: 'none',
 		},
 		onClose: {
 			description: '모달을 닫을 때 실행시킬 콜백 함수입니다.',
@@ -31,7 +32,7 @@ type Story = StoryObj<typeof ConfirmMeetingEndModal>;
  * 모달을 여는 버튼은 본 컴포넌트에 포함되지 않습니다. 이 컴포넌트를 사용하여 구현할 경우 이에 맞는 적절한 UI를 구현해 주세요.
  */
 export const Default: Story = {
-	render: () => {
+	render: (_, { args }) => {
 		const [open, setOpen] = useState(false);
 
 		return (
@@ -53,7 +54,7 @@ export const Default: Story = {
 					모달 열기
 				</button>
 				<ConfirmMeetingEndModal
-					roomName="(주)김비서소프트 1차 임원 회의"
+					roomName={args.roomName}
 					open={open}
 					onClose={() => {
 						setOpen(false);
@@ -63,5 +64,7 @@ export const Default: Story = {
 			</div>
 		);
 	},
-	args: {},
+	args: {
+		roomName: '(주)김비서소프트 1차 임원 회의',
+	},
 };
