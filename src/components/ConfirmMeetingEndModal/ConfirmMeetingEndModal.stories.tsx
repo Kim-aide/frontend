@@ -38,6 +38,14 @@ export const Default: Story = {
 			<div>
 				<button
 					type="button"
+					style={{
+						padding: '12px',
+						borderRadius: '4px',
+						backgroundColor: '#222222',
+						color: 'white',
+						fontSize: '16px',
+						fontWeight: 600,
+					}}
 					onClick={() => {
 						setOpen(true);
 					}}
@@ -45,14 +53,12 @@ export const Default: Story = {
 					모달 열기
 				</button>
 				<ConfirmMeetingEndModal
-					roomName=""
+					roomName="(주)김비서소프트 1차 임원 회의"
 					open={open}
 					onClose={() => {
 						setOpen(false);
 					}}
-					onConfirm={() => {
-						console.log('confirm');
-					}}
+					onConfirm={() => {}}
 				/>
 			</div>
 		);
