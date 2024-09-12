@@ -1,6 +1,7 @@
 import * as S from './ConfirmMeetingEndModal.styled';
-import { useState, useId } from 'react';
+import { useId } from 'react';
 import { createPortal } from 'react-dom';
+import useAnimatedModalClose from '../../hooks/useAnimatedModalClose';
 import { CloseIcon } from '../../assets/svg';
 
 interface ConfirmMeetingEndModalProps {
@@ -16,27 +17,10 @@ const ConfirmMeetingEndModal = ({
 	onClose,
 	onConfirm,
 }: ConfirmMeetingEndModalProps) => {
-	const [isModalClosing, setIsModalClosing] = useState(false);
+	const { isModalClosing, startClosingModal, onClosingAnimationEnd } =
+		useAnimatedModalClose({ onClose });
 	const titleId = useId();
 	const descriptionId = useId();
-
-	const closeModal = () => {
-		setIsModalClosing(true);
-	};
-
-	const confirmModal = () => {
-		onConfirm();
-		closeModal();
-	};
-
-	const handleModalClosingAnimationEnd = () => {
-		if (!isModalClosing) {
-			return;
-		}
-
-		setIsModalClosing(false);
-		onClose();
-	};
 
 	return open
 		? createPortal(
@@ -48,15 +32,15 @@ const ConfirmMeetingEndModal = ({
 				>
 					<S.Backdrop
 						className={isModalClosing ? 'hidden' : 'visible'}
-						onClick={closeModal}
+						onClick={startClosingModal}
 					/>
 					<S.Modal
 						className={isModalClosing ? 'hidden' : 'visible'}
-						onAnimationEnd={handleModalClosingAnimationEnd}
+						onAnimationEnd={onClosingAnimationEnd}
 					>
 						<S.ModalHeader>
 							<S.Title id={titleId}>회의 종료 확인</S.Title>
-							<S.CloseBtn aria-label="창 닫기" onClick={closeModal}>
+							<S.CloseBtn aria-label="창 닫기" onClick={startClosingModal}>
 								<CloseIcon />
 							</S.CloseBtn>
 						</S.ModalHeader>
@@ -75,7 +59,7 @@ const ConfirmMeetingEndModal = ({
 								type="button"
 								$backgroundColor="#515151"
 								$hoverBackgroundColor="#656565"
-								onClick={closeModal}
+								onClick={startClosingModal}
 								autoFocus={true}
 							>
 								취소
@@ -84,7 +68,10 @@ const ConfirmMeetingEndModal = ({
 								type="button"
 								$backgroundColor="#ff4040"
 								$hoverBackgroundColor="#ff7c7c"
-								onClick={confirmModal}
+								onClick={() => {
+									onConfirm();
+									startClosingModal();
+								}}
 							>
 								회의 종료
 							</S.ControlPanelBtn>
