@@ -1,8 +1,8 @@
 import * as S from './ConfirmMeetingEndModal.styled';
 import { useId } from 'react';
 import { createPortal } from 'react-dom';
-import useAnimatedModalClose from '../../hooks/useAnimatedModalClose';
-import { CloseIcon } from '../../assets/svg';
+import useAnimatedModalClose from '../../../hooks/useAnimatedModalClose';
+import { CloseIcon } from '../../../assets/svg';
 
 interface ConfirmMeetingEndModalProps {
 	roomName: string;

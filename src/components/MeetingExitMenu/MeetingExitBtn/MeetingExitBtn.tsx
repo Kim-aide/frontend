@@ -1,5 +1,5 @@
 import * as S from './MeetingExitBtn.styled';
-import { CallEndIcon } from '../../assets/svg';
+import { CallEndIcon } from '../../../assets/svg';
 import type { MouseEvent } from 'react';
 
 interface MeetingExitBtnProps {
