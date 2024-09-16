@@ -18,7 +18,7 @@ const meta = {
 		},
 		onClick: {
 			description: '본 컴포넌트를 클릭했을 때 호출할 콜백 함수를 의미합니다.',
-			control: { type: 'function' },
+			control: { type: 'object' },
 		},
 	},
 } satisfies Meta<typeof ChatBtn>;
