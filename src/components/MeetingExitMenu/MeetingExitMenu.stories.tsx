@@ -9,6 +9,19 @@ import MeetingExitMenu from './MeetingExitMenu';
 const meta: Meta<typeof MeetingExitMenu> = {
 	title: 'components/MeetingExitMenu',
 	component: MeetingExitMenu,
+	argTypes: {
+		roomName: {
+			description: '현재 참여하고 있는 회의방의 이름입니다.',
+		},
+		onMeetingExit: {
+			description:
+				'사용자가 최종적으로 회의를 나가는 것을 선택했을 때 실행시킬 콜백 함수입니다.',
+		},
+		onMeetingEnd: {
+			description:
+				'사용자가 최종적으로 모든 사용자에 대해 회의를 종료하는 것을 선택했을 때 실행시킬 콜백 함수입니다.',
+		},
+	},
 };
 export default meta;
 
