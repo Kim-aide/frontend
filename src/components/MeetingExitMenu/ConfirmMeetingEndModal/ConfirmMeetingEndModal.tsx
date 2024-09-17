@@ -17,12 +17,16 @@ const ConfirmMeetingEndModal = ({
 	onClose,
 	onConfirm,
 }: ConfirmMeetingEndModalProps) => {
-	const { isModalClosing, startClosingModal, onClosingAnimationEnd } =
-		useAnimatedModalClose({ onClose });
+	const {
+		isModalOpen,
+		isModalClosing,
+		startClosingModal,
+		handleClosingAnimationEnd,
+	} = useAnimatedModalClose({ open, onClose });
 	const titleId = useId();
 	const descriptionId = useId();
 
-	return open
+	return isModalOpen
 		? createPortal(
 				<S.Container
 					role="alertdialog"
@@ -36,7 +40,7 @@ const ConfirmMeetingEndModal = ({
 					/>
 					<S.Modal
 						className={isModalClosing ? 'hidden' : 'visible'}
-						onAnimationEnd={onClosingAnimationEnd}
+						onAnimationEnd={handleClosingAnimationEnd}
 					>
 						<S.ModalHeader>
 							<S.Title id={titleId}>회의 종료 확인</S.Title>
