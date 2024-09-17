@@ -6,9 +6,7 @@ interface MeetingExitBtnProps {
 	onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const MeetingExitBtn = (props: MeetingExitBtnProps) => {
-	const { onClick } = props;
-
+const MeetingExitBtn = ({ onClick }: MeetingExitBtnProps) => {
 	return (
 		<S.Container onClick={onClick} aria-label="회의 나가기">
 			<CallEndIcon />
