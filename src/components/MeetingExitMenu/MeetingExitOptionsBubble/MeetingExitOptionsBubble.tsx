@@ -10,7 +10,7 @@ const MeetingExitOptionsBubble = ({
 	onMeetingEnd,
 }: MeetingExitOptionsBubbleProps) => {
 	return (
-		<S.Container role="dialog">
+		<S.Container>
 			<S.ControlPanelBtn
 				type="button"
 				$backgroundColor="#515151"
