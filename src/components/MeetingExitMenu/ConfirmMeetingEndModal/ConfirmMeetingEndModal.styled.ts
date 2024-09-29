@@ -50,7 +50,7 @@ const Container = styled.div`
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: 1345253;
+	z-index: 1000000;
 `;
 
 const Backdrop = styled.div`

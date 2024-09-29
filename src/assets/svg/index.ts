@@ -9,3 +9,4 @@ export { ReactComponent as NavigateMainIcon } from './navigate-main-icon.svg';
 export { ReactComponent as SearchIcon } from './search-icon.svg';
 export { ReactComponent as SummaryIcon } from './summary-icon.svg';
 export { ReactComponent as CloseIcon } from './close-icon.svg';
+export { ReactComponent as CallEndIcon } from './call-end-icon.svg';
