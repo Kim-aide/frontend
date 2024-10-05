@@ -6,6 +6,8 @@ import { ThemeProvider } from '@emotion/react';
 import { theme } from './styles/theme';
 
 const enableMocking = async () => {
+	return;
+
 	if (process.env.NODE_ENV === 'production') {
 		return;
 	}

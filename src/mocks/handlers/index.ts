@@ -1,3 +1,1 @@
-import { testHandlers } from './test';
-
-export const handlers = [...testHandlers];
+export const handlers = [];
