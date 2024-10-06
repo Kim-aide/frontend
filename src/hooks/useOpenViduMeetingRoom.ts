@@ -86,6 +86,7 @@ const useOpenViduMeetingRoom = () => {
 			}
 
 			const roomKey = await fetchRoomKey(roomCode);
+			console.log(`테스트: roomKey는 ${roomKey}입니다.`);
 			joinSession(roomKey);
 		};
 
