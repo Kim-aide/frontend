@@ -4,8 +4,8 @@ import type { Session, Publisher, Subscriber, Device } from 'openvidu-browser';
 import fetchRoomKey from '../domains/fetchRoomKey';
 
 const useOpenViduMeetingRoom = () => {
-	const [session, setSession] = useState<Session | undefined>(undefined);
-	const [publisher, setPublisher] = useState<Publisher | undefined>(undefined);
+	const [session, setSession] = useState<Session>();
+	const [publisher, setPublisher] = useState<Publisher>();
 	const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
 	const [videoDevice, setVideoDevice] = useState<Device | undefined>(undefined);
 	const openVidu = useRef<OpenVidu | null>();
