@@ -6,7 +6,7 @@ import { useState } from 'react';
  * `<ConfirmMeetingEndModal>`은 회의 종료를 선택한 사용자에게 확인차로 정말로 모든 사용자에 대해 회의를 종료하는지가 맞는지를 묻기 위한 모달 컴포넌트입니다.
  */
 const meta: Meta<typeof ConfirmMeetingEndModal> = {
-	title: 'components/ConfirmMeetingEndModal',
+	title: 'components/MeetingExitMenu/ConfirmMeetingEndModal',
 	component: ConfirmMeetingEndModal,
 	argTypes: {
 		roomName: {
