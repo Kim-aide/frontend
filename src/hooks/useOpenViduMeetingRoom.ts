@@ -7,7 +7,10 @@ const useOpenViduMeetingRoom = () => {
 	const [session, setSession] = useState<Session>();
 	const [publisher, setPublisher] = useState<Publisher>();
 	const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
-	const [videoDevice, setVideoDevice] = useState<Device | undefined>(undefined);
+	const [videoDevice, setVideoDevice] = useState<Device>();
+	const [isCamActive, setIsCamActive] = useState(false);
+	const [isMicActive, setIsMicActive] = useState(false);
+	const [isHeadsetActive, setIsHeadsetActive] = useState(false);
 	const openVidu = useRef<OpenVidu | null>();
 
 	const joinSession = async (roomKey: string) => {
@@ -62,9 +65,54 @@ const useOpenViduMeetingRoom = () => {
 
 			setVideoDevice(currentVideoDevice);
 			setPublisher(publisher);
+			setIsCamActive(true);
+			setIsMicActive(true);
+			setIsHeadsetActive(true);
 		});
 
 		setSession(newSession);
+	};
+
+	const toggleCamActive = () => {
+		if (!session) {
+			return;
+		}
+
+		setIsCamActive((prev) => {
+			const newCamActiveState = !prev;
+
+			publisher?.publishVideo(newCamActiveState);
+			return newCamActiveState;
+		});
+	};
+
+	const toggleMicActive = () => {
+		if (!session) {
+			return;
+		}
+
+		setIsMicActive((prev) => {
+			const newMicActiveState = !prev;
+
+			publisher?.publishAudio(newMicActiveState);
+			return newMicActiveState;
+		});
+	};
+
+	const toggleHeadsetActive = () => {
+		if (!session) {
+			return;
+		}
+
+		setIsHeadsetActive((prev) => {
+			const newHeadsetActiveState = !prev;
+
+			subscribers.forEach((subscriber) => {
+				subscriber.subscribeToAudio(newHeadsetActiveState);
+			});
+
+			return newHeadsetActiveState;
+		});
 	};
 
 	const leaveSession = useCallback(() => {
@@ -120,10 +168,19 @@ const useOpenViduMeetingRoom = () => {
 		? [publisherInfo, ...subscriberInfos]
 		: subscriberInfos;
 
+	const isConnected = !!session;
+
 	return {
 		participantInfos,
 		videoDevice,
+		isConnected,
+		isCamActive,
+		isMicActive,
+		isHeadsetActive,
 		leaveSession,
+		toggleCamActive,
+		toggleMicActive,
+		toggleHeadsetActive,
 	};
 };
 
