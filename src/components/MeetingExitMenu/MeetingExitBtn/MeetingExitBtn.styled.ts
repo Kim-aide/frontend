@@ -19,6 +19,10 @@ const Container = styled.button`
 		transform: scale(1);
 	}
 
+	&:disabled {
+		opacity: 0.4;
+	}
+
 	& > svg {
 		width: 32px;
 		height: 32px;
