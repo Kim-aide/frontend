@@ -8,6 +8,9 @@ const meta: Meta<typeof MeetingExitBtn> = {
 	title: 'components/MeetingExitMenu/MeetingExitBtn',
 	component: MeetingExitBtn,
 	argTypes: {
+		disabled: {
+			description: '이 버튼이 비활성화되어 있는지의 여부입니다.',
+		},
 		onClick: {
 			description: '이 버튼을 클릭했을 때 호출할 콜백 함수를 의미합니다.',
 		},
@@ -18,5 +21,7 @@ export default meta;
 type Story = StoryObj<typeof MeetingExitBtn>;
 
 export const Default: Story = {
-	args: {},
+	args: {
+		disabled: false,
+	},
 };
