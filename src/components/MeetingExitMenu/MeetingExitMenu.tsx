@@ -6,12 +6,14 @@ import * as S from './MeetingExitMenu.styled';
 
 interface MeetingExitMenuProps {
 	roomName: string;
+	disabled: boolean;
 	onMeetingExit: () => void;
 	onMeetingEnd: () => void;
 }
 
 const MeetingExitMenu = ({
 	roomName,
+	disabled,
 	onMeetingExit,
 	onMeetingEnd,
 }: MeetingExitMenuProps) => {
@@ -28,7 +30,10 @@ const MeetingExitMenu = ({
 
 	return (
 		<S.Container ref={menuContainerRef}>
-			<MeetingExitBtn onClick={startOpeningExitBubbleAnimation} />
+			<MeetingExitBtn
+				disabled={disabled}
+				onClick={startOpeningExitBubbleAnimation}
+			/>
 			{isExitBubbleOpen && (
 				<S.MeetingExitOptionsBubbleWrapper
 					className={isExitBubbleClosing ? 'hidden' : 'visible'}

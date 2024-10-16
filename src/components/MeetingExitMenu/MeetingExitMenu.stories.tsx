@@ -13,6 +13,9 @@ const meta: Meta<typeof MeetingExitMenu> = {
 		roomName: {
 			description: '현재 참여하고 있는 회의방의 이름입니다.',
 		},
+		disabled: {
+			description: '이 메뉴가 비활성화되어 있는지의 여부입니다.',
+		},
 		onMeetingExit: {
 			description:
 				'사용자가 최종적으로 회의를 나가는 것을 선택했을 때 실행시킬 콜백 함수입니다.',
@@ -45,5 +48,6 @@ export const Default: Story = {
 	],
 	args: {
 		roomName: '(주)김비서소프트 1차 임원 회의',
+		disabled: false,
 	},
 };
