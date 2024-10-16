@@ -54,6 +54,7 @@ const MeetingRoom = () => {
 				/>
 				<MeetingExitMenu
 					roomName="테스트 룸"
+					disabled={!isConnected}
 					onMeetingExit={leaveSession}
 					onMeetingEnd={() => {
 						alert(
